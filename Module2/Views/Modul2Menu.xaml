@@ -8,6 +8,6 @@
                                  mvvm:ViewModelLocator.AutoWireViewModel="True"
                                  mc:Ignorable="d">
     <mah:HamburgerMenuHeaderItem Label="Module 2" />
-    <mah:HamburgerMenuIconItem Label="go to ViewC" Command="{Binding NavigateCommand}" CommandParameter="ViewC"/>
+    <mah:HamburgerMenuItem Label="go to ViewC" CommandParameter="ViewC"/>
     <mah:HamburgerMenuSeparatorItem />
 </mah:HamburgerMenuItemCollection>

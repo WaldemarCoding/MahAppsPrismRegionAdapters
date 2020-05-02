@@ -6,21 +6,39 @@
         xmlns:core="clr-namespace:PrismApp.Core;assembly=PrismApp.Core"
         prism:ViewModelLocator.AutoWireViewModel="True"
         Title="{Binding Title}" Height="350" Width="525" >
-    <DockPanel LastChildFill="True">
-        <!--<TabControl
-            x:Name="HamburgerMenuTabControl"
-            Margin="2"
-            prism:RegionManager.RegionName="{x:Static core:RegionNames.MenuRegion}"
-            BorderBrush="Gray"
-            BorderThickness="1" />-->
-        <mah:HamburgerMenu  x:Name="HamburgerMenuControl"
-                            Grid.Row="0"
+    <Window.Resources>
+        <DataTemplate x:Key="MenuItemTemplate" DataType="{x:Type mah:HamburgerMenuItem}">
+            <Grid ToolTip="{Binding ToolTip}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="48" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <ContentControl
+                    Grid.Column="0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Content="{Binding Icon}"
+                    Focusable="False" />
+                <TextBlock
+                    Grid.Column="1"
+                    VerticalAlignment="Center"
+                    FontSize="14"
+                    Foreground="White"
+                    Text="{Binding Label}" />
+            </Grid>
+        </DataTemplate>
+    </Window.Resources>
+
+    <mah:HamburgerMenu  x:Name="HamburgerMenuControl"
+                            ItemTemplate="{StaticResource MenuItemTemplate}"
                             DisplayMode="CompactInline"
-                            Foreground="White"
                             prism:RegionManager.RegionName="{x:Static core:RegionNames.MenuRegion}"
+                            Loaded="HamburgerMenuControl_OnLoaded"
                             ItemClick="HamburgerMenuControl_OnItemClick"
                             IsPaneOpen="True">
-        </mah:HamburgerMenu>
-        <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegion}" />
-    </DockPanel>
+        <mah:HamburgerMenu.Content>
+            <!-- Don't forget to SetRegionName and SetRegionManager! See Code-Behind! -->
+            <ContentControl x:Name="HamburgerMenuContent" prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegion}"/>
+        </mah:HamburgerMenu.Content>
+    </mah:HamburgerMenu>
 </mah:MetroWindow>

@@ -5,10 +5,11 @@
                                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                                  xmlns:mvvm="http://prismlibrary.com/"
                                  xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+                                 xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
                                  mvvm:ViewModelLocator.AutoWireViewModel="True"
                                  mc:Ignorable="d">
     <mah:HamburgerMenuHeaderItem Label="Module 1" />
-    <mah:HamburgerMenuItem Label="go to ViewA" Command="{Binding NavigateCommand}" CommandParameter="ViewA"/>
-    <mah:HamburgerMenuItem Label="go to ViewB" Command="{Binding NavigateCommand}" CommandParameter="ViewB"/>
+    <mah:HamburgerMenuIconItem Label="go to ViewA" Icon="{iconPacks:Material Kind=Home}" CommandParameter="ViewA"/>
+    <mah:HamburgerMenuIconItem Label="go to ViewB" Icon="{iconPacks:Material Kind=Account}" CommandParameter="ViewB"/>
     <mah:HamburgerMenuSeparatorItem />
 </mah:HamburgerMenuItemCollection>

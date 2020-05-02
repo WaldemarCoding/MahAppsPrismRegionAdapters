@@ -1,4 +1,6 @@
-﻿using MahApps.Metro.Controls;
+﻿using System.Windows;
+using MahApps.Metro.Controls;
+using Prism.Regions;
 using PrismApp.Core;
 
 namespace PrismApp.Views
@@ -10,22 +12,31 @@ namespace PrismApp.Views
     {
         private readonly IApplicationCommands _applicationCommands;
 
-        public MainWindow(IApplicationCommands applicationCommands)
+        public MainWindow(IApplicationCommands applicationCommands, IRegionManager regionManager)
         {
             _applicationCommands = applicationCommands;
             InitializeComponent();
+            RegionManager.SetRegionName(HamburgerMenuContent, RegionNames.ContentRegion);
+            RegionManager.SetRegionManager(HamburgerMenuContent, regionManager);
         }
 
         private void HamburgerMenuControl_OnItemClick(object sender, ItemClickEventArgs args)
         {
-            if (((HamburgerMenu)sender).SelectedItem is NavigationItem child)
+            if (((HamburgerMenu)sender).SelectedItem is HamburgerMenuItem child)
             {
-                if (!string.IsNullOrEmpty(child.NavigationPath))
+                if (child.CommandParameter is string path)
                 {
-                    _applicationCommands.NavigateCommand.Execute(child.NavigationPath);
+                    _applicationCommands.NavigateCommand.Execute(path);
                 }
             }
         }
 
+        private void HamburgerMenuControl_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            if (((HamburgerMenu)sender).SelectedItem is IMenuRootItem root)
+            {
+                _applicationCommands.NavigateCommand.Execute(root.DefaultNavigationPath);
+            }
+        }
     }
 }

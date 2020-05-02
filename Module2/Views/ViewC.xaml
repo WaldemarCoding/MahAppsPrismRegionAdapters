@@ -10,7 +10,7 @@
              prism:ViewModelLocator.AutoWireViewModel="True" >
     <Grid>
         <TextBlock Text="{Binding Message}"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center" />
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center" />
     </Grid>
 </UserControl>
