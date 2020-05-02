@@ -1,0 +1,26 @@
+﻿<mah:MetroWindow x:Class="PrismApp.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://prismlibrary.com/"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:core="clr-namespace:PrismApp.Core;assembly=PrismApp.Core"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Title="{Binding Title}" Height="350" Width="525" >
+    <DockPanel LastChildFill="True">
+        <!--<TabControl
+            x:Name="HamburgerMenuTabControl"
+            Margin="2"
+            prism:RegionManager.RegionName="{x:Static core:RegionNames.MenuRegion}"
+            BorderBrush="Gray"
+            BorderThickness="1" />-->
+        <mah:HamburgerMenu  x:Name="HamburgerMenuControl"
+                            Grid.Row="0"
+                            DisplayMode="CompactInline"
+                            Foreground="White"
+                            prism:RegionManager.RegionName="{x:Static core:RegionNames.MenuRegion}"
+                            ItemClick="HamburgerMenuControl_OnItemClick"
+                            IsPaneOpen="True">
+        </mah:HamburgerMenu>
+        <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegion}" />
+    </DockPanel>
+</mah:MetroWindow>
