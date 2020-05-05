@@ -2,7 +2,7 @@
 
 Demo App showing how to use the [MahApps.Metro](https://github.com/MahApps/MahApps.Metro) HamburgerMenu together with a modular Prism Setup, where the Menu is populated by the Module itself.
 
-![](Demo.gif)
+![](Demo.gif) 
 
 Credit goes to [@BrianLagunas](https://twitter.com/brianlagunas) and his Twitch Streams on Building a PrismOutlook App (you can check out the archive in this [Playlist on YT](https://www.youtube.com/playlist?list=PLf48ZHxekgCMC73VWaGnQ1YuTahCndrNW)). 
 
