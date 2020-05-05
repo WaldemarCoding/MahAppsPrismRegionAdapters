@@ -18,7 +18,7 @@ namespace Module1
 
         public void OnInitialized(IContainerProvider containerProvider)
         {
-            _regionManager.RegisterViewWithRegion(RegionNames.MenuRegion, typeof(Modul1Menu));
+            _regionManager.RegisterViewWithRegion(RegionNames.MenuRegion, typeof(Module1Menu));
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)

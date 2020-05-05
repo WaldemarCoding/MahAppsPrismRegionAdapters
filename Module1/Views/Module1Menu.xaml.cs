@@ -6,9 +6,9 @@ namespace Module1.Views
     /// <summary>
     /// Interaction logic for AccordionMenuItem.xaml
     /// </summary>
-    public partial class Modul1Menu : HamburgerMenuItemCollection, IMenuRootItem
+    public partial class Module1Menu : HamburgerMenuItemCollection, IMenuRootItem
     {
-        public Modul1Menu()
+        public Module1Menu()
         {
             InitializeComponent();
         }

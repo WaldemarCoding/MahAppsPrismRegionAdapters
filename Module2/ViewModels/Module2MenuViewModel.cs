@@ -2,7 +2,7 @@
 
 namespace Module2.ViewModels
 {
-    public class Modul2MenuViewModel : BindableBase
+    public class Module2MenuViewModel : BindableBase
     {
     }
 }

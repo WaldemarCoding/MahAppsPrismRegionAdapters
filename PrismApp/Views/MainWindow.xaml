@@ -33,7 +33,7 @@
                             ItemTemplate="{StaticResource MenuItemTemplate}"
                             DisplayMode="CompactInline"
                             prism:RegionManager.RegionName="{x:Static core:RegionNames.MenuRegion}"
-                            Loaded="HamburgerMenuControl_OnLoaded"
+                            Loaded="HamburgerMenuControl_OnLoaded" 
                             ItemClick="HamburgerMenuControl_OnItemClick"
                             IsPaneOpen="True">
         <mah:HamburgerMenu.Content>

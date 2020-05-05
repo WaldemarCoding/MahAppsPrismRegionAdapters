@@ -18,12 +18,13 @@ namespace Module2
 
         public void OnInitialized(IContainerProvider containerProvider)
         {
-            _regionManager.RegisterViewWithRegion(RegionNames.MenuRegion, typeof(Modul2Menu));
+            _regionManager.RegisterViewWithRegion(RegionNames.MenuRegion, typeof(Module2Menu));
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<ViewC, ViewCViewModel>();
+            containerRegistry.RegisterForNavigation<Module2Menu, Module2MenuViewModel>();
         }
     }
 }

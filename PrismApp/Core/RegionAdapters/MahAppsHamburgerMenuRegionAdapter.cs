@@ -9,7 +9,7 @@ namespace PrismApp.Core.RegionAdapters
     public class MahAppsHamburgerMenuRegionAdapter : RegionAdapterBase<HamburgerMenu>
     {
         public ObservableCollection<HamburgerMenuItemBase> Records { get; set; } = new ObservableCollection<HamburgerMenuItemBase>();
-        
+
         public MahAppsHamburgerMenuRegionAdapter(IRegionBehaviorFactory regionBehaviorFactory) : base(regionBehaviorFactory)
         {
         }
@@ -46,7 +46,7 @@ namespace PrismApp.Core.RegionAdapters
 
         protected override IRegion CreateRegion()
         {
-            return new SingleActiveRegion();
+            return new AllActiveRegion();
         }
 
         private void AddViewToRegion(object view, HamburgerMenu regionTarget)
@@ -74,7 +74,10 @@ namespace PrismApp.Core.RegionAdapters
         {
             if (view is HamburgerMenuItemCollection hmItem)
             {
-                regionTarget.Items.Remove(hmItem);
+                foreach (var item in hmItem)
+                {
+                    Records.Remove(item);
+                }
             }
         }
     }

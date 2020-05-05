@@ -12,12 +12,12 @@
     <ProjectReference Include="..\PrismApp.Core\PrismApp.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Views\Modul2Menu.xaml.cs">
+    <Compile Update="Views\Module2Menu.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Views\Modul2Menu.xaml">
+    <Page Update="Views\Module2Menu.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

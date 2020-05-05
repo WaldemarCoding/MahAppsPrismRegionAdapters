@@ -2,7 +2,7 @@
 
 namespace Module1.ViewModels
 {
-    public class ViewBViewModel : BindableBase
+    public class ViewAViewModel : BindableBase
     {
         private string _message;
         public string Message
@@ -11,9 +11,9 @@ namespace Module1.ViewModels
             set { SetProperty(ref _message, value); }
         }
 
-        public ViewBViewModel()
+        public ViewAViewModel()
         {
-            Message = "View B from Module 1";
+            Message = "View A from Module 1";
         }
     }
 }
